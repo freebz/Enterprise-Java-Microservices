@@ -1,0 +1,20 @@
+<!-- 예제 2-6 메이븐 플러그인 설정 -->
+
+<plugin>
+  <groupId>io.thorntail</groupId>
+  <artifactId>thorntail-maven-plugin</artifactId>
+  <version>${version.thorntail}</version>
+  <executions>
+    <execution>
+      <id>package</id>
+      <goals>
+	<goal>package</goal>
+      </goals>
+    </execution>
+  </executions>
+  <configuration>
+    <properties>
+      <thorntail.port.offset>1</thorntail.port.offset>
+    </properties>
+  </configuration>
+</plugin>
