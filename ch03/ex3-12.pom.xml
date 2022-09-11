@@ -1,0 +1,14 @@
+<!-- 예제 3-12 플러그인 설정 -->
+
+<plugin>
+  <groupId>io.thorntail</groupId>
+  <artifactId>thorntail-maven-plugin</artifactId>
+  <version>2.2.0.Final</version>
+  <executions>
+    <execution>
+      <goals>
+	<goal>package</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
