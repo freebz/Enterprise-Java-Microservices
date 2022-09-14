@@ -1,0 +1,33 @@
+<!-- 예제 5-3 이퀄리안 큐브 의존성 -->
+
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.arquillian.cube</groupId>
+      <artifactId>arquillian-cube-bom</artifactId>
+      <version>1.12.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>org.arquillian.cube</groupId>
+    <artifactId>arquillian-cube-openshift</artifactId>
+    <scope>test</scope>
+    <exclusions>
+      <execlusion>
+	<groupId>io.undertow</groupId>
+	<artifactId>undertow-core</artifactId>
+      </exclusion>
+    </exclusions>
+  </dependency>
+  <dependency>
+    <groupId>org.awaitility</groupId>
+    <artifactId>awaitility</artifactId>
+    <version>3.0.0</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>

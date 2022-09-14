@@ -1,0 +1,59 @@
+// 예제 5-2 service-chapter-5-admin.json
+
+{
+  "apiVersion":"v1",
+  "kind":"Service",
+  "metadata": {
+    "annotations": {
+      "fabric8.io/git-branch":"master",
+      "fabric8.io/git-commit":"377ac684babee220885246de1700d76e3d11a8ab",
+      "fabric8.io/iconUrl":"img/icons/wildfly.svg",
+      "fabric8.io/scm-con-url":"scm:git:git@github.com:kenfinnigan/ejm-samples.git/chapter5/chapter5-admin",
+      "fabric8.io/scm-tag":"HEAD",
+      "fabric8.io/scm-url":"https://github.com/kenfinnigan/ejm-samples/chapter5/chapter5-admin",
+      "prometheus.io/port":"9799",
+      "prometheus.io/scrape":"true"
+    },
+    "creationTimestamp":"20107-11-21T01:47:02Z",
+    "finalizers":[],
+    "labels": {
+      "app":"cahpter5-admin",
+      "expose":"true",
+      "group":"ejm",
+      "provider":"fabric8",
+      "version":"1.0-SNAPSHOT"
+    },
+    "name":"chapter5-admin",
+    "namespace":"myproject",
+    "ownerReferences":[],
+    "resourceVersion":"3074",
+    "selfLink":"/api/v1/namespaces/myproject/services/chapter5-admin",
+    "uid":"decf5db 7-ce5d-11e7-994e-0afca351eb6b"
+  },
+  "spec": {
+    "clusterIP":"172.30.221.166",
+    "deprecatedPublicIPs":[],
+    "externalIPs":[],
+    "loadBalancerSourceRanges":[],
+    "ports": [
+      {
+	"name":"http",
+	"port":8080,
+	"protocol":"TCP",
+	"targetPort":8080
+      }
+    ],
+    "selector": {
+      "app":"chapter5-admin",
+      "group":"ejm",
+      "provider":"fabric8"
+    },
+    "sessionAffinity":"None",
+    "type":"ClusterIP"
+  },
+  "status": {
+    "loadBalancer": {
+      "ingress":[]
+    }
+  }
+}
