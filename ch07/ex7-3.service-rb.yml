@@ -1,0 +1,9 @@
+# 예제 7-3 service-rb.yml
+
+metadata:
+  name: view-service
+  subjects:
+  - kind: ServiceAccount
+    name: service
+  roleRef:
+    name: view

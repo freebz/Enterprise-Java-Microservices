@@ -1,0 +1,10 @@
+# 예제 7-4 deployment.yml
+
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: ${project.artifactId}
+spec:
+  template:
+    spec:
+      serviceAccountName: service

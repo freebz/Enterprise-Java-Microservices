@@ -1,0 +1,4 @@
+# 예제 7-2 service-sa.yml
+
+metadata:
+  name: service
