@@ -1,0 +1,52 @@
+// 예제 9-7 cayambe-realm.json
+
+"realm": "cayambe",
+...
+"users": [
+  {
+    "username": "ken",
+    ...
+    "realmRoles": [
+      "admin",
+      "user",
+      "offline_access"
+    ],
+    ...
+  },
+  {
+    "username": "bob",
+    ...
+    "realmRoles": [
+      "user",
+      "offline_access"
+    ],
+    ...
+  },
+  "roles": {
+    "realm": [
+      {
+	"name": "user",
+	"description": "User privileges"
+      },
+      {
+	"name": "admin",
+	"description": "Administrator privileges"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "cayambe-admin-ui",
+      "enabled": true,
+      "publicClient": true,
+      "baseUrl": "http://localhost:8080",
+      "redirectUris": [
+	"http://localhost:8080/*"
+      ]
+    },
+    {
+      "clientId": "cayambe-admin-service",
+      "enabled": true,
+      "bearerOnly": true
+    }
+  ]

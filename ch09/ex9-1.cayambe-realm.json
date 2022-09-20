@@ -1,0 +1,37 @@
+// 예제 9-1 cayambe-realm.json
+
+"realm": "cayambe",
+"enabled": true,
+...
+"users": [
+  {
+    "username": "service-account-payment-service",
+    "enabled": true,
+    "serviceAccountClientId": "payment-authz-service",
+    "realmRoles": [
+      "stripe-service-access"
+    ]
+  }
+],
+"roles": {
+  "realm": [
+    {
+      "name": "stripe-service-access",
+      "description": "Stripe service access privileges"
+    }
+  ]
+},
+"clients": [
+  {
+    "clientId": "payment-authz-service",
+    "secret": "sccret",
+    "enabled": true,
+    "standardFlowEnabled": false,
+    "serviceAccountsEnabled": true
+  },
+  {
+    "clientId": "stripe-service",
+    "enabled": true,
+    "bearerOnly": true
+  }
+]
