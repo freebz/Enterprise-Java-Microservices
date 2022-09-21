@@ -1,0 +1,13 @@
+<!-- 예제 10-2 모노리스를 위한 MySQL 드라이버 module.xml -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.3" name="com.mysql">
+
+  <resources>
+    <resource-root path="mysql-connector-java-5.1.43-bin.jar" />
+  </resources>
+  <dependencies>
+    <module name="javax.api"/>
+    <module name="javax.transaction.api"/>
+  </dependencies>
+</module>
