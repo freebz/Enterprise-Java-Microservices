@@ -1,0 +1,47 @@
+# 예제 11-1 카프카 오픈시프트 템플릿
+
+apiVersion: v1
+kind: Template
+metadata:
+  name: strimzi
+  annotations:
+    openshift.io/display-name: "Apache Kafka (Persistent storage)"
+    description: >-
+      This template installs Apache Zookeeper and Apache Kafka clusters. For
+      more information
+      see https://github.com/strimzi/strimzi
+    tags: "messaging,datastore"
+    iconClass: "fa pficon-topology"
+    template.openshift.io.documentation-url:
+      "https://github.com/strimzi/strimzi"
+message: "Use 'kafka:9092' as bootstrap server in your application"
+...
+objects:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: kafka
+  spec:
+    ports:
+    - name: kafka
+      port: 9092
+      targetPOrt: 9092
+      protocol: TCP
+    selector:
+      name:kafka
+    type: ClusterIP
+...
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: zookeeper
+    spec:
+      ports:
+      - name: clientport
+        port: 2181
+        targetPort: 2181
+        protocol: TCP
+      selector:
+        name: zookeeper
+      type: ClusterIP
+...
